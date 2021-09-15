@@ -10,39 +10,38 @@
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/base.css">
 	<link rel="stylesheet" href="../../css/common.css">
-	<link rel="stylesheet" href="../../css//board/view.css">
+	<link rel="stylesheet" href="../../css/board/view.css">
 	<script src="../../js/jquery.min.js"></script>
 	<script src="../../js/moment.min.js"></script>
 	<script src="../../js/lodash.min.js"></script>
 	<script src="../../js/util.js"></script>
 </head>
 <body> 
-	<header class="header-wrapper">
-		<h1 class="logo"><a href="./list.html">노드 게시판</a></h1>
-		<nav class="navi-wrap">
-			<a href="./write.html" class="navi">게시글 등록</a>
-			<a href="./list.html" class="navi">게시글 리스트</a>
-		</nav>
-		<nav class="lang-wrap">
-			<a href="./list.html" class="navi active">한국어</a> 
-			<span> | </span>
-			<a href="./list.html" class="navi ">영어</a>
-		</nav>
-	</header>
-
-	<section class="title-wrapper">
-		<div class="wrapper">
-			<h2 class="title-wrap">게시글 상세 보기 </h2>
-			<p class="desc-wrap">노드 게시판 게시글 상세 보기 입니다.</p>
-			<div class="btn-wrap">
-				<a href="./write.html" class="btn btn-primary">등록</a>
-			</div>
+<header class="header-wrapper">
+	<h1 class="logo"><a href="./list.html">노드 게시판</a></h1>
+	<nav class="navi-wrap">
+		<a href="./write.html" class="navi">게시글 등록</a>
+		<a href="./list.html" class="navi">게시글 리스트</a>
+	</nav>
+	<nav class="lang-wrap">
+		<a href="./list.html" class="navi active">한국어</a>
+		<span> | </span>
+		<a href="./list.html" class="navi ">영어</a>
+	</nav>
+</header>
+<section class="title-wrapper">
+	<div class="wrapper">
+		<h2 class="title-wrap">게시글 상세 보기</h2>
+		<p class="desc-wrap">노드 게시판 게시글 상세 보기입니다.</p>
+		<div class="btn-wrap">
+			<a href="./write.html" class="btn btn-primary">등록</a>
 		</div>
-	</section> 
-	<section class="view-wrapper wrapper">
-		<h3 class="title-bar">
-		<span class="bullet"></span> 게시글 상세 보기
-	</h3> 
+	</div>
+</section> 
+<section class="view-wrapper wrapper">
+	<h3 class="title-bar">
+		<span class="bullet"></span> 게시글 상세 보기 
+	</h3>
 	<table class="view-tbl">
 		<tbody>
 			<tr>
@@ -54,8 +53,8 @@
 				<td class="content">테스터</td>
 			</tr>
 			<tr>
-				<td class="title">등록일</td>
-				<td class="content">2021-09-15 13:22:14</td>
+				<td class="title">작성일</td>
+				<td class="content">2021-09-15 13:18:22</td>
 			</tr>
 			<tr>
 				<td class="title">조회수</td>
@@ -63,7 +62,7 @@
 			</tr>
 			<tr class="content-tr">
 				<td class="title">내용</td>
-				<td class="content">테스트 글 내용 입니다.</td>
+				<td class="content">테스트 글 내용입니다.</td>
 			</tr>
 			<tr>
 				<td class="title">첨부파일</td>
@@ -76,9 +75,26 @@
 	</table>
 	<div class="btn-wrap py-3 d-flex">
 		<a href="./list.html" class="btn btn-primary">리스트</a>
-		<a href="./update.html" class="btn btn-success ml-auto mr-1" >수정</a>
+		<a href="./update.html" class="btn btn-success ml-auto mr-1">수정</a>
 		<a href="#" class="btn btn-danger">삭제</a>
 	</div>
-	</section>
+	<div class="comment-wrap">
+		<form action="#">
+			<div class="write-wp form-inline">
+				<input type="text" class="form-control">
+				<button class="btn btn-primary">댓글등록</button>
+			</div>
+			<table class="table table-sm">
+				<tbody>
+					<tr>
+						<td class="datetime">21-09-15 11:11:15</td>
+						<td class="comment">댓글을 달았습니다.</td>
+						<td class="writer">홍귈동</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</section>
 </body>
 </html>
