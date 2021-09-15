@@ -5,8 +5,10 @@ const router = express.Router()
 // const { pool } = require('../../modules/mysql-init')
 const listRouter = require('./list-router')
 const viewRouter = require('./view-router')
+const writeRouter = require('./write-router')
 
-router.use('/', listRouter)
-router.use('/view', viewRouter)
+router.use('/write', writeRouter)		// 글작성(수정)
+router.use('/view', viewRouter)			// 상세페이지
+router.use('/', listRouter)					// 리스트
 
 module.exports = router

@@ -1,0 +1,41 @@
+<%- include('../inc/head',{ css })%>
+<%- include('../inc/header')%>
+<section class="write-wrapper wrapper">
+	<%- include('../inc/title-bar')%>
+	<!-- 본문내용 -->
+	<form action="#" method="POST" name="">
+		<table class="write-tbl">
+			<tbody>
+				<tr>
+					<td class="title require">제목</td>
+					<td class="content">
+						<input type="text" name="" class="form-control" placeholder="제목">
+					</td>
+				</tr>
+				<tr>
+					<td class="title">작성자</td>
+					<td class="content">
+						<input type="text" name="" class="form-control" placeholder="작성자">
+					</td>
+				</tr>
+				<tr>
+					<td class="title">내용</td>
+					<td class="content">
+						<textarea name="" class="form-control" placeholder="내용"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="title">첨부파일</td>
+					<td class="content">
+						<input type="file" name="" class="form-control-file">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="btn-wrap p-3 text-center">
+			<button class="btn btn-success">등록</button>
+			<button class="btn btn-danger" type="reset">다시 등록</button>
+		</div>
+	</form>
+</section>
+<%- include('../inc/foot.ejs', { js }) %> 

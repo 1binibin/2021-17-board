@@ -5,7 +5,9 @@ const router = express.Router()
 // const { pool } = require('../../modules/mysql-init')
 
 router.get(['/', '/:page'], (req, res, next) => {
-	res.status(200).render('board/list')
+	const css = 'board/list'
+	const js = 'board/list'
+	res.status(200).render('board/list', { css, js })
 })
 
 

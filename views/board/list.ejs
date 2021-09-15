@@ -1,16 +1,15 @@
-<%- include('../inc/head')%>
+<%- include('../inc/head',{ css })%>
 <%- include('../inc/header')%>
-<!-- 본문내용 -->
 <section class="list-wrapper wrapper">
-	<h3 class="title-bar">
-		<span class="bullet"></span> 게시글 리스트 
-	</h3>
-	<table class="table table-hover table-dark table-striped text-center">
+	<%- include('../inc/title-bar')%>
+	<!-- 본문내용 -->
+	<table class="board-tbl table table-hover table-dark table-striped text-center">
 		<thead>
 			<tr>
 				<th>번호</th>
 				<th>제목</th>
 				<th>작성자</th>
+				<th>내용</th>
 				<th>작성일</th>
 				<th>조회수</th>
 			</tr>
@@ -18,25 +17,30 @@
 		<tbody>
 			<tr>
 				<td>5</td>
-				<td class="text-left"><a href="./view.html">테스트 게시글 입니다.</a></td>
+				<td>테스트 게시글 입니다.</td>
 				<td>테스터</td>
+				<td class="text-left">테스트 내용입니다.</td>
 				<td>2021-09-15</td>
 				<td>21</td>
 			</tr>
 			<tr>
 				<td>5</td>
-				<td class="text-left"><a href="./view.html">테스트 게시글 입니다.</a></td>
+				<td>테스트 게시글 입니다.</td>
 				<td>테스터</td>
+				<td class="text-left">테스트 내용입니다.</td>
 				<td>2021-09-15</td>
 				<td>21</td>
 			</tr>
 			<tr>
 				<td>5</td>
-				<td class="text-left"><a href="./view.html">테스트 게시글 입니다.</a></td>
+				<td>테스트 게시글 입니다.</td>
 				<td>테스터</td>
+				<td class="text-left">테스트 내용입니다.</td>
 				<td>2021-09-15</td>
 				<td>21</td>
 			</tr>
 		</tbody>
-<%- include('../inc/pager')%>
-<%- include('../inc/foot')%>
+		</table>
+		<%- include('../inc/pager')%>
+	</section>
+<%- include('../inc/foot', { js })%>
