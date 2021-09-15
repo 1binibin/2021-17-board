@@ -1,6 +1,6 @@
 /storages
 /storages-remove
-
+.env
 
 # Logs
 logs

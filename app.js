@@ -27,17 +27,17 @@ app.use('/',express.static( path.join(__dirname, 'public') ))
 
 
 /*************** router init *****************/
-// const Router = require('./routes/')
+const boardRouter = require('./routes/board')
 
-// app.use('/', Router)
+app.use('/board', boardRouter)
 
 
 /*************** error init *****************/
-const _404Router = require('./routes/error/404-router')
-const _500Router = require('./routes/error/500-router')
+// const _404Router = require('./routes/error/404-router')
+// const _500Router = require('./routes/error/500-router')
 
-app.use(_404Router)
-app.use(_500Router)
+// app.use(_404Router)
+// app.use(_500Router)
 
 
 

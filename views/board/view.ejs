@@ -1,0 +1,56 @@
+<%- include('../inc/head')%>
+<%- include('../inc/header')%>
+<!-- 본문내용 -->
+<table class="view-tbl">
+	<tbody>
+		<tr>
+			<td class="title">제목</td>
+			<td class="content">테스트 글 입니다.</td>
+		</tr>
+		<tr>
+			<td class="title">작성자</td>
+			<td class="content">테스터</td>
+		</tr>
+		<tr>
+			<td class="title">작성일</td>
+			<td class="content">2021-09-15 13:18:22</td>
+		</tr>
+		<tr>
+			<td class="title">조회수</td>
+			<td class="content">21</td>
+		</tr>
+		<tr class="content-tr">
+			<td class="title">내용</td>
+			<td class="content">테스트 글 내용입니다.</td>
+		</tr>
+		<tr>
+			<td class="title">첨부파일</td>
+			<td class="content">
+				<img src="https://via.placeholder.com/120x160" alt="첨부파일" class="file-img">
+				<a href="#" class="my-2 d-block">첨부파일.jpg</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="btn-wrap py-3 d-flex">
+	<a href="./list.html" class="btn btn-primary">리스트</a>
+	<a href="./update.html" class="btn btn-success ml-auto mr-1">수정</a>
+	<a href="#" class="btn btn-danger">삭제</a>
+</div>
+<div class="comment-wrap">
+	<form action="#">
+		<div class="write-wp form-inline">
+			<input type="text" class="form-control">
+			<button class="btn btn-primary">댓글등록</button>
+		</div>
+		<table class="table table-sm">
+			<tbody>
+				<tr>
+					<td class="datetime">21-09-15 11:11:15</td>
+					<td class="comment">댓글을 달았습니다.</td>
+					<td class="writer">홍귈동</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+<%- include('../inc/foot')%>
