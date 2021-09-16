@@ -3,7 +3,7 @@
 .view-wrapper .view-tbl td.title {width: 160px; color: #777; font-size: .875em;}
 .view-wrapper .view-tbl .content-tr td:last-child {line-height: 1.25;}
 
-.view-wrapper .file-img {width: 120px;}
+.view-wrapper .content .file-img {width: 120px;}
 
 .view-wrapper .comment-wrap {margin: 2em 0;}
 .view-wrapper .comment-wrap .write-wp {display: flex; flex-wrap: nowrap;}

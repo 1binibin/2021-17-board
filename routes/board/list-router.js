@@ -13,13 +13,13 @@ router.get(['/', '/:page'], async (req, res, next) => {
 	try {
 		sql = " SELECT COUNT(id) FROM boards WHERE status > '0' "
 		const [[cnt]] = await pool.execute(sql)
-		const totalRecord = cnt['COUNT(idx)']
+		const totalRecord = cnt['COUNT(id)']
 		const page = Number(req.params.page || 1)
 		const pager = createPager(page, totalRecord, 5, 3)
 		
-		sql = ` SELECT B.* FROM boards B ORDER BY B.id DESC`
+		sql = ` SELECT B.* FROM boards B ORDER BY B.id DESC LIMIT ?,?`
 		values = [pager.startIdx.toString(), pager.listCnt.toString()]
-		const [boards] = await pool.execute(sql)
+		const [boards] = await pool.execute(sql, values)
 	
 		boards.forEach(v => {
 			v.createdAt = moment(v.createdAt).format('YYYY-MM-DD')

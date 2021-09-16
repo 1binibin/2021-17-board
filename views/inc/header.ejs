@@ -1,13 +1,13 @@
 <header class="header-wrapper">
 	<h1 class="logo"><a href="/board"><%= GLOBAL.LOGO%></a></h1>
 	<nav class="navi-wrap">
-		<a href="/board/write" class="navi"><%= GLOBAL.NAVI[0]%></a>
-		<a href="/board" class="navi"><%= GLOBAL.NAVI[1]%></a>
+		<a href="/<%= LANG %>/board/write" class="navi"><%= GLOBAL.NAVI[0]%></a>
+		<a href="/<%= LANG %>/board" class="navi"><%= GLOBAL.NAVI[1]%></a>
 	</nav>
 	<nav class="lang-wrap">
-		<a href="./list.html" class="navi active">한국어</a>
+		<a href="/ko/board" class="navi active">한국어</a>
 		<span> | </span>
-		<a href="./list.html" class="navi ">영어</a>
+		<a href="/en/board" class="navi ">영어</a>
 	</nav>
 </header>
 <section class="title-wrapper">
@@ -15,7 +15,7 @@
 		<h2 class="title-wrap"><%= eval(PAGE+'.TITLE')%></h2>
 		<p class="desc-wrap"><%= eval(PAGE+'.DESC')%></p>
 		<div class="btn-wrap">
-			<a href="/board/write" class="btn btn-primary"><%= BT.CREATE%></a>
+			<a href="/<%= LANG %>/board/write" class="btn btn-primary"><%= BT.CREATE%></a>
 		</div>
 	</div>
 </section> 
