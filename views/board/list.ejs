@@ -6,41 +6,25 @@
 	<table class="board-tbl table table-hover table-dark table-striped text-center">
 		<thead>
 			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>내용</th>
-				<th>작성일</th>
-				<th>조회수</th>
+				<th><%= FIELD.NO%></th>
+				<th><%= FIELD.TITLE%></th>
+				<th><%= FIELD.WRITER%></th>
+				<th><%= FIELD.DATE%></th>
+				<th><%= FIELD.READCOUNT%></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>5</td>
-				<td>테스트 게시글 입니다.</td>
-				<td>테스터</td>
-				<td class="text-left">테스트 내용입니다.</td>
-				<td>2021-09-15</td>
-				<td>21</td>
+			<% for(let board of boards) { %>
+			<tr data-idx="<%= board.id %>" data-lang="<%= LANG %>">
+				<td><%= board.id %></td>
+				<td><%= board.title %></td>
+				<td><%= board.writer %></td>
+				<td><%= board.createdAt %></td>
+				<td><%= board.viewCount %></td>
 			</tr>
-			<tr>
-				<td>5</td>
-				<td>테스트 게시글 입니다.</td>
-				<td>테스터</td>
-				<td class="text-left">테스트 내용입니다.</td>
-				<td>2021-09-15</td>
-				<td>21</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>테스트 게시글 입니다.</td>
-				<td>테스터</td>
-				<td class="text-left">테스트 내용입니다.</td>
-				<td>2021-09-15</td>
-				<td>21</td>
-			</tr>
+			<%  } %>
 		</tbody>
 		</table>
-		<%- include('../inc/pager')%>
+		<%- include('../inc/pager', { ...pager })%>
 	</section>
 <%- include('../inc/foot', { js })%>

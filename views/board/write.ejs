@@ -7,25 +7,25 @@
 		<table class="write-tbl">
 			<tbody>
 				<tr>
-					<td class="title require">제목</td>
+					<td class="title require"><%= FIELD.TITLE%></td>
 					<td class="content">
 						<input type="text" name="" class="form-control" placeholder="제목">
 					</td>
 				</tr>
 				<tr>
-					<td class="title">작성자</td>
+					<td class="title"><%= FIELD.WRITER%></td>
 					<td class="content">
 						<input type="text" name="" class="form-control" placeholder="작성자">
 					</td>
 				</tr>
 				<tr>
-					<td class="title">내용</td>
+					<td class="title"><%= FIELD.CONTENT%></td>
 					<td class="content">
 						<textarea name="" class="form-control" placeholder="내용"></textarea>
 					</td>
 				</tr>
 				<tr>
-					<td class="title">첨부파일</td>
+					<td class="title"><%= FIELD.UPFILE%></td>
 					<td class="content">
 						<input type="file" name="" class="form-control-file">
 					</td>
@@ -33,8 +33,8 @@
 			</tbody>
 		</table>
 		<div class="btn-wrap p-3 text-center">
-			<button class="btn btn-success">등록</button>
-			<button class="btn btn-danger" type="reset">다시 등록</button>
+			<button class="btn btn-success"><%= BT.CREATE%></button>
+			<button class="btn btn-danger" type="reset"><%= BT.RESET%></button>
 		</div>
 	</form>
 </section>
