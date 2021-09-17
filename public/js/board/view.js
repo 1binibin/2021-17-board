@@ -7,5 +7,7 @@ function onUpdate(e) {
 document.querySelector('#btDelete').addEventListener('click', onDelete)
 
 function onDelete(e) {
-	if(confirm(this.dataset['']))
+	if(confirm(this.dataset['msg'])) {
+		document.deleteForm.submit();
+	}
 }

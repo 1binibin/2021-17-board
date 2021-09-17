@@ -19,8 +19,8 @@ router.get('/:id', async(req, res, next) => {
 		const sql= `
 				SELECT B.*, F.realname, F.savename 
 				FROM boards B  
-				LEFT  JOIN  files F ON B.id = F.fid
-				WHERE 'status'>'0' AND B.id=?
+				LEFT  JOIN  files F ON B.id = F.fid AND F.status > '0'
+				WHERE B.status>'0' AND B.id=?
 				`
 		const values = [ req.params.id ]
 		const [[board]] = await pool.execute(sql,values)

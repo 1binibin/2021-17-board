@@ -28,7 +28,7 @@
 		<tr>
 			<td class="title"><%= FIELD.UPFILE%></td>
 			<td class="content">
-				<% if(board.savename) { %>
+				<% if(board && board.savename) { %>
 					<img src="<%= board.savename %>" alt="<%= board.realname %>" class="file-img">
 					<% } else{ %>
 				<img src="https://via.placeholder.com/120x160" alt="첨부파일" class="file-img">
@@ -41,7 +41,11 @@
 <div class="btn-wrap py-3 d-flex">
 	<a href="/<%= LANG %>/board" class="btn btn-primary"><%= BT.LIST%></a>
 	<button class="btn btn-success ml-auto mr-1" id="btUpdate" data-id="<%= board.id%>" data-lang="<%= LANG %>"><%= BT.UPDATE%></button>
-	<button class="btn btn-danger" id="btDelete"><%= BT.DELETE%></button>
+	<button class="btn btn-danger" id="btDelete" data-msg="<%= MSG.DELETE %>"><%= BT.DELETE%></button>
+	<form action="/<%= LANG %>/board" method="POST" name="deleteForm">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="hidden" name="id" value="<%= board.id %>">
+	</form>
 </div>
 
 <%- include('../inc/comment')%>

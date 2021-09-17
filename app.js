@@ -1,5 +1,4 @@
 /*************** global init *****************/
-require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const app = express()
@@ -7,6 +6,7 @@ const methodInit = require('./modules/method-init')
 
 
 /*************** server init  *****************/
+require('dotenv').config()
 require('./modules/server-init')(app, process.env.PORT)
 
 
@@ -29,9 +29,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 /*************** router init *****************/
 const langMW = require('./middlewares/lang-mw')
 const boardRouter = require('./routes/board')
+const apiRouter = require('./routes/api/board')
 
 app.use(langMW)
 app.use('/board', boardRouter)
+app.use('/api/board', apiRouter)
 
 
 /*************** error init *****************/

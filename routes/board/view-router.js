@@ -13,12 +13,11 @@ router.get('/:id', async (req, res, next) => {
 		sql = `
 		SELECT B.*, F.realname, F.savename 
 		FROM boards B  
-		LEFT  JOIN  files F ON B.id = F.fid
-		WHERE 'status'>'0' AND B.id=?
+		LEFT  JOIN  files F ON B.id = F.fid AND F.status > '0'
+		WHERE B.status > '0' AND B.id=?
 		`
 		values = [req.params.id]
 		const [[board]] = await pool.execute(sql, values)
-		console.log(board)
 
 		if(board){
 			board.createdAt = moment(board.createdAt).format('YYYY-MM-DD')

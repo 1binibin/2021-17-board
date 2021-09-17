@@ -6,8 +6,10 @@
 	<%- include('../inc/title-bar')%>
 	<!-- 본문내용 -->
 	<form action="/<%= LANG %>/board" method="POST" name="saveForm" enctype="multipart/form-data">
+		<% if(board) { %>
 		<input type="hidden" name="_method" value="PUT">
-		<input type="hidden" name="id" >
+		<input type="hidden" name="id" value="<%= board.id %>">
+		<% } %>
 		<table class="write-tbl">
 			<tbody>
 				<tr>
@@ -31,11 +33,11 @@
 				<tr>
 					<td class="title"><%= FIELD.UPFILE%></td>
 					<td class="content">
-						<% if(board) { %>
+						<% if(board && board.savename) { %>
 							<div class="file-wrap">
 								<img src="<%= board.savename %>" alt="<%= board.realname %>" class="img">
 								<div class="file"><%= board.realname %></div>
-								<button type="button" class="btn btn-sm btn-danger" data-idx="<%= board.id %>" id="btRemove">삭제</button>
+								<button type="button" class="btn btn-sm btn-danger" data-id="<%= board.id %>" id="btRemove">삭제</button>
 							</div>
 							<% } %> 
 						<input type="file" name="upfile" class="form-control-file">
@@ -44,7 +46,7 @@
 			</tbody>
 		</table>
 		<div class="btn-wrap p-3 text-center">
-			<button class="btn btn-success" id="btSave"><%= BT.CREATE%></button>
+			<button class="btn btn-success" id="btSave"><%= board ? BT.UPDATE : BT.CREATE%></button>
 			<button class="btn btn-danger" type="reset"><%= BT.RESET%></button>
 		</div>
 	</form>

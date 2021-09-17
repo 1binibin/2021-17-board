@@ -17,18 +17,20 @@ function onSubmit(e) {
 	}
 	this.submit();
 }
-if(document.btRemove)
-	document.btRemove.addEventListener('click', onRemove)
+if(document.querySelector('#btRemove'))
+	document.querySelector('#btRemove').addEventListener('click', onRemoveFile)
 
-function onRemove(e) {
-	var idx = this.dataset['id'];
+
+function onRemoveFile(e) {
+	var id = this.dataset['id'];
 	var parent = this.parentNode;
-	axios.delete('/board/'+idx).then(onSuccess).catch(onError);
-		function onSuccess(r) {
-			if(r.data.code == 200) parent.remove();
-		}
-		function onError(err) {
-			console.log(err);
-			console.log(err.response);
-		}
+	axios.delete('/api/board/file/'+id).then(onSuccess).catch(onError);
+	function onSuccess(r) {
+		if(r.data.code == 200) parent.remove();
+	}
+	
+	function onError(err) {
+		console.log(err);
+		console.log(err.response);
+	}
 }
